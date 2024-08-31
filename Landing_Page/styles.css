@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f3f3f3;
+    background-image:url(Restaurant.jpg);
+    object-fit: cover;
+    background-size: cover;
+    color: #333;
+    height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background: url(image1.jpg);
+}
+header.hero {
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+header.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+   
+    
+}
+
+header.hero nav {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    z-index: 1000;
+}
+
+header.hero nav .logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+header.hero nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+header.hero nav .nav-links li {
+    margin: 0 15px;
+}
+
+header.hero nav .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+header.hero nav .nav-links a:hover {
+    color: #ff6347;
+}
+
+header.hero nav .btn {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+header.hero nav .btn:hover {
+    background-color: #e5533d;
+}
+
+header.hero .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+header.hero .hero-content h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+header.hero .hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+header.hero .hero-content .btn {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+header.hero .hero-content .btn:hover {
+    background-color: #e5533d;
+}
+
+.about, .menu, .testimonials, .reservation {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.about {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .about-content, .about .about-image {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+}
+
+.about .about-content {
+    max-width: 500px;
+}
+
+.about .about-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about .about-content p {
+    font-size: 18px;
+}
+
+.about .about-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.menu {
+    background-color: #f9f9f9;
+}
+
+.menu h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.menu .menu-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.menu .menu-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.menu .menu-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.menu .menu-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.menu .menu-item p {
+    font-size: 16px;
+    color: #777;
+}
+
+.testimonials {
+    background-color: #fff;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.testimonials .testimonial-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.testimonials .testimonial {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .testimonial p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #777;
+}
+
+.testimonials .testimonial h4 {
+    font-size: 18px;
+    color: #333;
+}
+
+.reservation {
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+}
+
+.reservation h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.reservation form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.reservation form input, .reservation form button {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+.reservation form button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.reservation form button:hover {
+    background-color: #e5533d;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 16px;
+}
