@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List with Duplicate Check</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main">
+        <div class="div1">
+            <h1>Welcome To To-DO list</h1>
+            <h3>List your all task using this To-do List</h3>
+        </div>
+       
+        <div class="todo-app">
+            <h2>To-Do List</h2>
+            <div class="row">
+                <input type="text" id="new-task" placeholder="Add a new task..." />
+                <button id="add-task-btn">Add Task</button>
+            </div>
+            <ul id="tasks-list"></ul>
+        </div>
+    </div>
+    <script>
+        document.getElementById('add-task-btn').addEventListener('click', function() {
+            const taskText = document.getElementById('new-task').value.trim();
+        
+            if (taskText === '') {
+                alert('Please enter a task!');
+                return;
+            }
+        
+            const taskExists = checkDuplicateTask(taskText);
+            if (taskExists) {
+                alert('Task already added!');
+                return;
+            }
+        
+            createTaskElement(taskText);
+            document.getElementById('new-task').value = ''; // Clear input
+        });
+        
+        function createTaskElement(taskText) {
+            const li = document.createElement('li');
+            const span = document.createElement('span');
+            span.textContent = 'Delete';
+        
+
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+            editButton.classList.add('edit-button');
+            editButton.addEventListener('click', function() {
+                editTask(li);
+            });
+        
+          
+            li.textContent = taskText;
+            li.appendChild(editButton);
+            li.appendChild(span);
+            document.getElementById('tasks-list').appendChild(li);
+        
+        
+            li.addEventListener('click', function() {
+                li.classList.toggle('checked');
+            });
+        
+            
+            span.addEventListener('click', function() {
+                li.remove();
+            });
+        }
+        
+        function editTask(taskElement) {
+            const newTaskText = prompt('Edit your task:', taskElement.childNodes[0].textContent);
+            
+            if (newTaskText !== null && newTaskText.trim() !== '') {
+              
+                if (checkDuplicateTask(newTaskText.trim())) {
+                    alert('Task already added!');
+                } else {
+                    taskElement.childNodes[0].textContent = newTaskText.trim();
+                }
+            }
+        }
+        
+        function checkDuplicateTask(taskText) {
+            const tasks = document.querySelectorAll('#tasks-list li');
+            for (const task of tasks) {
+                if (task.firstChild.textContent.toLowerCase() === taskText.toLowerCase()) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
